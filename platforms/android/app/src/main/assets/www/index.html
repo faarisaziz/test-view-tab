@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+    <title>Test App</title>
+    <link rel="stylesheet" href="lib/framework7/css/framework7.bundle.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7-icons.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="statusbar"></div>
+      <div class="views tabs safe-areas">
+        <div class="toolbar toolbar-bottom tabbar-labels">
+          <div class="toolbar-inner">
+            <a href="#view-1" class="tab-link tab-link-active">
+              <!-- <i class="icon f7-icons if-not-md">home_fill</i> -->
+              <i class="icon material-icons if-md">home</i>
+              <span class="tabbar-label">Tab 1</span>
+            </a>
+            <a href="#view-2" class="tab-link">
+              <!-- <i class="icon f7-icons if-not-md">list_fill</i> -->
+              <i class="icon material-icons if-md">view_list</i>
+              <span class="tabbar-label">Tab 2</span>
+            </a>
+            <a href="#view-3" class="tab-link">
+              <!-- <i class="icon f7-icons if-not-md">settings_fill</i> -->
+              <i class="icon material-icons if-md">settings</i>
+              <span class="tabbar-label">Tab 3</span>
+            </a>
+          </div>
+        </div>
+  
+        <div id="view-1" class="view view-main view-init tab tab-active" data-url="/">
+        </div>
+  
+        <div id="view-2" class="view view-init tab" data-view="tab-2" data-url="/tab-2/">
+        </div>
+  
+        <div id="view-3" class="view view-init tab" data-view="tab-3" data-url="/tab-3/">
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.bundle.min.js"></script>
+    <script type="text/javascript" src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

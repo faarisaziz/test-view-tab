@@ -1,0 +1,123 @@
+<template>
+  <div class="page no-toolbar no-swipeback">
+    <div class="page-content login-screen-content no-padding">
+      <img src="assets/top-vector@3x.png" class="su-header" />
+      <div class="text-align-center cp-header-text text-color-primary-2">Complete Your Profile</div>
+      <img src="assets/user@3x.png" class="cp-logo" />
+      <div class="list" style="margin-top: 36px;">
+        <ul>
+          <li>
+            <div class="input-container">
+              <img src="assets/school-calendar-1@3x.png" class="input-icon" />
+              <input class="input-field" id="cp-birth" type="date">
+              <label for="cp-birth">Date of birth</label>
+            </div>
+          </li>
+          <li>
+            <div class="input-container">
+              <img src="assets/gender@3x.png" class="input-icon" />
+              <select class="input-field" name="cp-gender" id="cp-select-gender">
+                <option disabled selected></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <label for="cp-select-gender">Gender</label>
+            </div>
+          </li>
+          <li>
+            <div class="input-container">
+              <img src="assets/shape@3x.png" class="input-icon" />
+              <select class="input-field" name="cp-blood" id="cp-select-blood">
+                <option disabled selected></option>
+                <option value="blood-a">A</option>
+                <option value="blood-b">B</option>
+                <option value="blood-ab">AB</option>
+                <option value="blood-o">O</option>
+              </select>
+              <label for="cp-select-blood">Blood type</label>
+            </div>
+          </li>
+          <li>
+            <div class="input-container">
+              <img src="assets/ring@3x.png" class="input-icon" />
+              <select class="input-field" name="cp-marital" id="cp-select-marital">
+                <option disabled selected></option>
+                <option value="marital-single">Single</option>
+                <option value="marital-married">Married</option>
+                <option value="marital-widowed">Widowed</option>
+                <option value="marital-divorced">Divorced</option>
+              </select>
+              <label for="cp-select-marital">Marital status</label>
+            </div>
+          </li>
+          <li>
+            <div class="input-container">
+              <img src="assets/scale@3x.png" class="input-icon" />
+              <input class="input-field" id="cp-weight" type="number" name="">
+              <label for="cp-weight">Weight</label>
+              <span class="input-right-label">kg</span>
+            </div>
+          </li>
+          <li>
+            <div class="input-container">
+              <img src="assets/height-1@3x.png" class="input-icon" />
+              <input class="input-field" id="cp-height" type="number" name="">
+              <label for="cp-height">Height</label>
+              <span class="input-right-label">cm</span>
+            </div>
+          </li>
+          <li>
+            <div class="input-container">
+              <img src="assets/password-icon@3x.png" class="input-icon" />
+              <select class="form-control" id="cp-spoken-language" multiple="multiple" style="width: 100%">
+                <option value="bahasa">Bahasa Indonesia</option>
+                <option value="melayu">Bahasa Melayu</option>
+                <option value="malaysia">Bahasa Malaysia</option>
+                <option value="english">English</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="list">
+        <ul>
+          <li>
+            <div class="btn-container">
+              <a href="#" class="btn-complete-profile login-btn">Continue</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  return {
+    on: {
+      pageInit: function() {
+        $(document).ready(function() {
+          $('#cp-spoken-language').select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+          });
+
+          $('.input-field').focus(function() {
+            $(this).parent().addClass('active');
+          }).blur(function() {
+            if ($(this).val() == '') {
+              $(this).parent().removeClass('active');
+            }
+          });
+        });
+      },
+      pageBeforeIn: function () {
+        var self = this;
+        var app = self.$app;
+
+        $(".btn-complete-profile").on("click", function () {
+        });
+      },
+    }
+  }
+</script>

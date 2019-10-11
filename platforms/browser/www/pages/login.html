@@ -1,0 +1,53 @@
+<template>
+  <div class="page no-navbar no-toolbar no-swipeback">
+    <div class="page-content login-screen-content">
+      <div class="login-screen-title">Login Page</div>      
+      <form>
+        <div class="list">
+          <ul>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Username</div>
+                <div class="item-input-wrap">
+                  <input type="text" id="login-user" name="username" placeholder="Username">
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Password</div>
+                <div class="item-input-wrap">
+                  <input type="password" name="password" placeholder="Password">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <li>
+              <a href="#" class="item-link list-button" @click="signIn">Sign In</a>
+            </li>
+            <li>
+              <a href="/sign-up/" class="item-link list-button">Sign Up</a>
+            </li>
+          </ul>
+          <div class="block-footer">Some text with login information.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+<script>
+  return {
+    methods: {
+      signIn: function () {
+        var router = this.$router;
+        var user = $('#login-user').val();
+        localStorage.setItem("user", user);
+        router.navigate('/');
+      }
+    }
+  }
+</script>

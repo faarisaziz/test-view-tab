@@ -1,0 +1,26 @@
+<template>
+  <div class="page" data-name="tab-3">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="title">Tab 3</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block-title">Tab 3 content</div>
+      <div class="block">
+        <a href="/get-started/" class="button" @click="logout">Logout</a>
+      </div>
+	  </div>
+  </div>
+</template>
+
+<script>
+  return {
+    methods: {
+      logout: function () {
+        var app = this.$f7;
+        localStorage.clear();
+      },
+    },
+  }
+</script>

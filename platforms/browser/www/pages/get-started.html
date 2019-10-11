@@ -1,0 +1,25 @@
+<template>
+  <div class="page no-toolbar no-swipeback">
+    <div class="page-content login-screen-content">
+      <div class="login-screen-title">Get Started</div>
+      <div class="list">
+        <ul>
+          <li>
+            <a href="/login/" class="button">Continue</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+  
+<script>
+  return {
+    on: {
+      pageBeforeIn: function () {
+        var app = this.$f7;
+        app.statusbar.hide();
+      },
+    }
+  }
+</script>
